@@ -49,9 +49,9 @@
 
             <nav id="navmenu" class="navmenu">
                 <ul>
-                    <li><a href="index.html" class="active">Home<br></a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="{{route('index')}}" class="active">Home<br></a></li>
+                    <li><a href="{{route('about')}}">About</a></li>
+                    <li><a href="">Services</a></li>
                     <li><a href="pricing.html">Pricing</a></li>
                     <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                         <ul>

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appWeb')
 @section('main')
 <main class="main">
 
@@ -102,6 +102,7 @@
 
     </section><!-- /Featured Services Section -->
 
+   
     <!-- About Section -->
     <section id="about" class="about section">
 
@@ -110,8 +111,10 @@
             <div class="row gy-4">
 
                 <div class="col-lg-6 position-relative align-self-start order-lg-last order-first" data-aos="fade-up" data-aos-delay="200">
-                    <img src="assets/img/about.jpg" class="img-fluid" alt="">
-                    <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox pulsating-play-btn"></a>
+                  
+                  @foreach($abouts as $about)
+                  <img src="{{Storage::url($about->image)}}" class="img-fluid" alt="">
+                  @endforeach
                 </div>
 
                 <div class="col-lg-6 content order-last  order-lg-first" data-aos="fade-up" data-aos-delay="100">
@@ -148,7 +151,8 @@
 
         </div>
 
-    </section><!-- /About Section -->
+    </section>
+    <!-- /About Section -->
 
     <!-- Services Section -->
     <section id="services" class="services section">
