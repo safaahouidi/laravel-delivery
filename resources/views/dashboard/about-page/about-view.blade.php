@@ -39,13 +39,14 @@
     </style>
     <div class="container">
         <div class="cont">
-            <img src="{{url('/images.jpg')}}" alt="" width="90%" height="350px">
+            <img src="{{url('/images.jpg')}}" alt="" width="60%" height="350px">
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Text</th>
                         <th scope="col">image</th>
+                        <th scope="col">control</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,24 +55,30 @@
                         <td>{{$about->id}}</td>
                         <td>{{$about->text}}</td>
                         <td>{{$about->image}}</td>
+
+                        <td>
+                            <a href="{{route('aboutEdit')}}"><button class="btn btn-success btn" type="submit">update
+                                </button></a>
+                        </td>
+                        <td>
+                            <a href=""><button class="btn btn-danger btn" formaction="1klasse.html">delete
+                                </button></a>
+                        </td>
+
+
                     </tr>
                     @endforeach
 
                 </tbody>
             </table>
-            <div class="col-md-8 text-center">
-                <a href=""><button class="btn btn-success btn-lg mx-5" type="submit" formaction="1klasse.html">update
-                    </button></a>
-                <a href=""><button class="btn btn-danger btn-lg" formaction="1klasse.html">delete
-                    </button></a>
 
 
-                </button></a>
 
-            </div>
             <a href="{{route('admin')}}"><button class="btn btn-primary mt-3 ">back to dashboard</button></a>
 
         </div>
+
+    </div>
 </body>
 
 </html>

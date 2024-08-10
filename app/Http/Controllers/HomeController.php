@@ -6,6 +6,8 @@ use App\Models\admin;
 use App\Models\about;
 use App\Models\index;
 use App\Models\ourteam;
+use App\Models\aboutview;
+
 
 
 
@@ -81,28 +83,28 @@ class HomeController extends Controller
        
        //dashboard about edit
 
-    public function adminEditCategory($id)
-    {
-        $category = Category::find($id);
-        return view('admin.categories.edit', compact('category'));
+          public function editaboutAdmin(){
+        $abouts=about:: all();
+        return view('dashboard/about-page/about-admin-edit',compact('abouts'));
     }
-    public function adminCategoryUpdate(Request $request,$id){
-         $category=Category::find($id);
-         if($request->hasFile('image')){
-        Storage::disk('public')->delete($category->image);
-        $imageUrl=$request->file('image')->store('categories','public');
-        $category->update([
+
+       public function adminEditAbout($id)
+    {
+        $about = about::find($id);
+        return view('about-admin-edit', compact('about'));
+    }
+    public function adminAboutUpdate(Request $request,$id){
+$about=about::find($id);
+    if($request->hasFile('image')){
+        Storage::disk('public')->delete($about->image);
+        $imageUrl=$request->file('image')->store('abouts','public');
+        $about->update([
             'image'=>$imageUrl,
         ]);
     }
-    $category->update([
+    $about->update([
         'name'=>$request->name
     ]);
-    return redirect()->route('categories')->with('message','Category Updated Successfully');
+    return redirect()->route('about-admin')->with('message','about Updated Successfully');
 }
-        }
-
-        
-        
-        
-
+}

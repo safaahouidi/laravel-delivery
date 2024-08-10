@@ -9,6 +9,8 @@ use App\Http\Controllers\OurteamController;
 use App\Http\Controllers\OurteamviewController;
 use App\Http\Controllers\AboutStoreController;
 use App\Http\Controllers\AboutviewController;
+use App\Http\Controllers\AbouteditController;
+
 
 
 
@@ -45,6 +47,7 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'showAdmins'])
 // dashboard / about page 
 // show interfce data for about page(about , ourteam )
 Route::get('/admin/aboutadmin', [App\Http\Controllers\HomeController::class, 'showaboutAdmins'])->name('about-Admin');
+Route::get('/admin/editaboutadmin', [App\Http\Controllers\AboutEditController::class, 'editaboutAdmin'])->name('aboutEdit');
 Route::get('/admin/ourteamadmin', [App\Http\Controllers\HomeController::class, 'showOurTeamAdmins'])->name('ourteam-Admin');
 
 //show database data for about page (about , ourteam)
@@ -57,3 +60,5 @@ Route::post('/admin/ourteam/store', [App\Http\Controllers\HomeController::class,
 
 // ---------------------------------------------------------------------------------
 
+Route::get('/admin/abouts/edit/{id}', [App\Http\Controllers\HomeController::class, 'adminEditAbout'])->name('adminEditAbout');
+Route::post('/admin/abouts/update/{id}', [App\Http\Controllers\HomeController::class, 'adminAboutUpdate'])->name('adminAboutUpdate');

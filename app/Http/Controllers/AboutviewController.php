@@ -10,7 +10,6 @@ class AboutviewController extends Controller
     public function showAllAboutview(){
         $aboutviews = about::all();
         return view('dashboard/about-page/about-view',compact('aboutviews'));
-        
 
     }
   
