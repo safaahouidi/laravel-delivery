@@ -71,6 +71,9 @@ class HomeController extends Controller
         $about->save();
         return redirect()->route('about-Admin')->with('message',"about Created Successfully");
              }
+
+
+    // ourteam store
      public function ourteamStore(Request $request){
                 // dd($request);
                 // return;

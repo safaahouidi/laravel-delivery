@@ -73,7 +73,7 @@ Route::post('/admin/abouts/destroy/{id}', [App\Http\Controllers\HomeController::
 // edit data from interface to table (ourteams)
 
 Route::get('/admin/ourteams/edit/{id}', [App\Http\Controllers\HomeController::class, 'adminEditOurteam'])->name('adminEditOurtem');
-Route::post('/admin/ourteams/update/{id}', [App\Http\Controllers\HomeController::class, 'adminOurteamUpdate'])->name('adminOurtemUpdate');
+Route::post('/admin/ourteams/update/{id}', [App\Http\Controllers\HomeController::class, 'adminOurteamUpdate'])->name('adminOurteamUpdate');
 
 //delete data from interface to table(ourteams)
 

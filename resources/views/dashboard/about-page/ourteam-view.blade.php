@@ -39,7 +39,7 @@
     </style>
     <div class="container">
         <div class="cont">
-            <img src="{{url('/ourteam.jpg')}}" alt="" width="90%" height="350px">
+            <img src="{{url('/ourteam.jpg')}}" alt="" width="70%" height="200px">
             <table class="table">
                 <thead>
                     <tr>

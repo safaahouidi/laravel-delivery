@@ -35,8 +35,8 @@
     </style>
     <div class="container">
         <div class="cont">
-            <img src="{{url('/ourteam.jpg')}}}" alt="" width="270px" height="200px">
-            <form action="{{route('adminAboutUpdate',$ourteam->id)}}" method="POST" enctype="multipart/form-data">
+            <img src="{{url('/ourteam.jpg')}}" alt="" width="270px" height="200px">
+            <form action="{{route('adminOurteamUpdate',$ourteam->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">name </label>
@@ -47,7 +47,7 @@
                     <input type="text" value="{{$ourteam->description}}" name="description" class="form-control">
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">About Image</label>
+                    <label for="exampleFormControlTextarea1" class="form-label">Ourteam Image</label>
                     <img style="width: 100px;height=100px;" src="{{Storage::url($ourteam->image)}}" alt="">
                 </div>
                 <div class="mb-3">
