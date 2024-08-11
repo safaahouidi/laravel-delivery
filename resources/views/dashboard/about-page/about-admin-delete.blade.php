@@ -36,26 +36,17 @@
     <div class="container">
         <div class="cont">
             <img src="{{url('/images.jpg')}}" alt="" width="270px" height="200px">
-            <form action="{{route('adminAboutUpdate',$about->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('adminAboutDestroy',$about->id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
-                    <label for="exampleFormControlInput1" class="form-label">Text </label>
-                    <input type="text" value="{{$about->text}}" name="text" class="form-control">
+                    <label for="exampleFormControlInput1" class="form-label">Are You Sure TO Delete
+                        {{$about->text}}</label>
                 </div>
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">About Image</label>
-                    <img style="width: 100px;height=100px;" src="{{Storage::url($about->image)}}" alt="">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Change Image</label>
-                    <input type="file" name="image" id="">
-                </div>
-                <div class="mb-3">
-                    <input type="submit" value="Update" class="btn btn-success mt-3">
+                    <input type="submit" value="Delete" class="btn btn-danger mt-3">
                 </div>
             </form>
-            <a href="{{route('aboutview-Admin')}}"><button class="btn btn-primary mt-3">back to about view</button></a>
-
+            <a href=" {{route('aboutview-Admin')}}"><button class="btn btn-primary mt-3">back to about view</button></a>
         </div>
 </body>
 

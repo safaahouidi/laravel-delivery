@@ -10,6 +10,8 @@ use App\Http\Controllers\OurteamviewController;
 use App\Http\Controllers\AboutStoreController;
 use App\Http\Controllers\AboutviewController;
 use App\Http\Controllers\AbouteditController;
+use App\Http\Controllers\ItemController;
+
 
 
 
@@ -58,7 +60,15 @@ Route::get('/admin/aboutview', [App\Http\Controllers\aboutviewController::class,
 Route::post('/admin/about/store', [App\Http\Controllers\HomeController::class, 'AboutStore'])->name('AboutStore');
 Route::post('/admin/ourteam/store', [App\Http\Controllers\HomeController::class, 'ourteamStore'])->name('ourteam-Store');
 
-// ---------------------------------------------------------------------------------
+// edit data from interface to table (abouts)
 
 Route::get('/admin/abouts/edit/{id}', [App\Http\Controllers\HomeController::class, 'adminEditAbout'])->name('adminEditAbout');
 Route::post('/admin/abouts/update/{id}', [App\Http\Controllers\HomeController::class, 'adminAboutUpdate'])->name('adminAboutUpdate');
+
+//delete data from interface to table(abouts)
+
+Route::get('/admin/abouts/delete/{id}', [App\Http\Controllers\HomeController::class, 'adminDeleteAbout'])->name('adminDeleteAbout');
+Route::post('/admin/abouts/destroy/{id}', [App\Http\Controllers\HomeController::class, 'adminAboutDestroy'])->name('adminAboutDestroy');
+
+//----------------------------------------------------------------------------------
+

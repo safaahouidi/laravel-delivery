@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\Models\admin;
 use App\Models\about;
@@ -83,15 +84,16 @@ class HomeController extends Controller
        
        //dashboard about edit
 
+
           public function editaboutAdmin(){
-        $abouts=about:: all();
+      
         return view('dashboard/about-page/about-admin-edit',compact('abouts'));
     }
 
-       public function adminEditAbout($id)
+     public function adminEditAbout($id)
     {
         $about = about::find($id);
-        return view('about-admin-edit', compact('about'));
+        return view('dashboard/about-page/about-admin-edit', compact('about'));
     }
     public function adminAboutUpdate(Request $request,$id){
     $about=about::find($id);
@@ -103,8 +105,26 @@ class HomeController extends Controller
         ]);
     }
     $about->update([
-        'name'=>$request->name
+        'text'=>$request->text
     ]);
-    return redirect()->route('about-admin')->with('message','about Updated Successfully');
+    return redirect()->route('aboutview-Admin')->with('message','about Updated Successfully');
 }
+
+
+//----------------------------------------------------------
+
+// delete about dashbourd
+
+    public function adminDeleteAbout($id)
+    {
+        $about = about::find($id);
+        return view('dashboard/about-page/about-admin-delete', compact('about'));
+    }
+    public function adminAboutDestroy($id){
+$about=about::find($id);
+
+    $about->delete();
+    return redirect()->route('aboutview-Admin')->with('message','about Deleted Successfully');
+}
+
 }

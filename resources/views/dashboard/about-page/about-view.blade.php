@@ -57,11 +57,13 @@
                         <td>{{$about->image}}</td>
 
                         <td>
-                            <a href="{{route('aboutEdit')}}"><button class="btn btn-success btn" type="submit">update
+                            <a href="{{url('admin/abouts/edit',$about->id)}}"><button class="btn btn-success btn"
+                                    type="submit">update
                                 </button></a>
                         </td>
                         <td>
-                            <a href=""><button class="btn btn-danger btn" formaction="1klasse.html">delete
+                            <a href="{{url('admin/abouts/delete',$about->id)}}"><button
+                                    class="btn btn-danger btn">delete
                                 </button></a>
                         </td>
 
