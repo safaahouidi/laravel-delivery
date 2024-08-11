@@ -49,7 +49,6 @@ Route::get('/admin', [App\Http\Controllers\HomeController::class, 'showAdmins'])
 // dashboard / about page 
 // show interfce data for about page(about , ourteam )
 Route::get('/admin/aboutadmin', [App\Http\Controllers\HomeController::class, 'showaboutAdmins'])->name('about-Admin');
-Route::get('/admin/editaboutadmin', [App\Http\Controllers\AboutEditController::class, 'editaboutAdmin'])->name('aboutEdit');
 Route::get('/admin/ourteamadmin', [App\Http\Controllers\HomeController::class, 'showOurTeamAdmins'])->name('ourteam-Admin');
 
 //show database data for about page (about , ourteam)
@@ -69,6 +68,18 @@ Route::post('/admin/abouts/update/{id}', [App\Http\Controllers\HomeController::c
 
 Route::get('/admin/abouts/delete/{id}', [App\Http\Controllers\HomeController::class, 'adminDeleteAbout'])->name('adminDeleteAbout');
 Route::post('/admin/abouts/destroy/{id}', [App\Http\Controllers\HomeController::class, 'adminAboutDestroy'])->name('adminAboutDestroy');
+
+
+// edit data from interface to table (ourteams)
+
+Route::get('/admin/ourteams/edit/{id}', [App\Http\Controllers\HomeController::class, 'adminEditOurteam'])->name('adminEditOurtem');
+Route::post('/admin/ourteams/update/{id}', [App\Http\Controllers\HomeController::class, 'adminOurteamUpdate'])->name('adminOurtemUpdate');
+
+//delete data from interface to table(ourteams)
+
+Route::get('/admin/ourteams/delete/{id}', [App\Http\Controllers\HomeController::class, 'adminDeleteOurteam'])->name('adminDeleteOurteam');
+Route::post('/admin/ourteams/destroy/{id}', [App\Http\Controllers\HomeController::class, 'adminOurteamDestroy'])->name('adminOurteamDestroy');
+
 
 //----------------------------------------------------------------------------------
 

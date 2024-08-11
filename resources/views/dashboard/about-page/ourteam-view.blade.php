@@ -47,6 +47,8 @@
                         <th scope="col">Name</th>
                         <th scope="col">Description</th>
                         <th scope="col">image</th>
+                        <th scope="col">Controls</th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -56,21 +58,23 @@
                         <td>{{$ourteam->name}}</td>
                         <td>{{$ourteam->description}}</td>
                         <td>{{$ourteam->image}}</td>
+
+                        <td>
+                            <a href="{{url('admin/ourteams/edit',$ourteam->id)}}"><button class="btn btn-success btn"
+                                    type="submit">update
+                                </button></a>
+                        </td>
+                        <td>
+                            <a href="{{url('admin/ourteams/delete',$ourteam->id)}}"><button
+                                    class="btn btn-danger btn">delete
+                                </button></a>
+                        </td>
                     </tr>
                     @endforeach
 
                 </tbody>
             </table>
-            <div class="col-md-8 text-center">
-                <a href=""><button class="btn btn-success btn-lg mx-5" type="submit" formaction="1klasse.html">update
-                    </button></a>
-                <a href=""><button class="btn btn-danger btn-lg" formaction="1klasse.html">delete
-                    </button></a>
 
-
-                </button></a>
-
-            </div>
             <a href="{{route('admin')}}"><button class="btn btn-primary mt-3 ">back to dashboard</button></a>
 
         </div>

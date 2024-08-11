@@ -8,6 +8,9 @@ use App\Models\about;
 use App\Models\index;
 use App\Models\ourteam;
 use App\Models\aboutview;
+use App\Models\ourteamview;
+
+
 
 
 
@@ -84,12 +87,6 @@ class HomeController extends Controller
        
        //dashboard about edit
 
-
-          public function editaboutAdmin(){
-      
-        return view('dashboard/about-page/about-admin-edit',compact('abouts'));
-    }
-
      public function adminEditAbout($id)
     {
         $about = about::find($id);
@@ -112,7 +109,6 @@ class HomeController extends Controller
 
 
 //----------------------------------------------------------
-
 // delete about dashbourd
 
     public function adminDeleteAbout($id)
@@ -125,6 +121,43 @@ $about=about::find($id);
 
     $about->delete();
     return redirect()->route('aboutview-Admin')->with('message','about Deleted Successfully');
+}
+
+// Our team update
+  public function adminEditOurteam($id)
+    {
+        $ourteam = ourteam::find($id);
+        return view('dashboard/about-page/ourteam-admin-edit', compact('ourteam'));
+    }
+   public function adminOurteamUpdate(Request $request,$id){
+    $ourteam=ourteam::find($id);
+    if($request->hasFile('image')){
+        Storage::disk('public')->delete($ourteam->image);
+        $imageUrl=$request->file('image')->store('ourteams','public');
+        $ourteam->update([
+            'image'=>$imageUrl,
+        ]);
+    }
+    $ourteam->update([
+        'name'=>$request->name,
+        'description'=>$request->description,
+
+    ]);
+    return redirect()->route('ourteam-Admin')->with('message','ourteam Updated Successfully');
+}
+
+// delete about dashbourd
+
+    public function adminDeleteOurteam($id)
+    {
+        $ourteam = ourteam::find($id);
+        return view('dashboard/about-page/ourteam-admin-delete', compact('ourteam'));
+    }
+    public function adminOurteamDestroy($id){
+    $ourteam=ourteam::find($id);
+
+    $ourteam->delete();
+    return redirect()->route('ourteamview-Admin')->with('message','ourteam Deleted Successfully');
 }
 
 }
