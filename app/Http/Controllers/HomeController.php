@@ -94,7 +94,7 @@ class HomeController extends Controller
         return view('about-admin-edit', compact('about'));
     }
     public function adminAboutUpdate(Request $request,$id){
-$about=about::find($id);
+    $about=about::find($id);
     if($request->hasFile('image')){
         Storage::disk('public')->delete($about->image);
         $imageUrl=$request->file('image')->store('abouts','public');
