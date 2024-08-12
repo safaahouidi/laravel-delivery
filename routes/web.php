@@ -10,7 +10,10 @@ use App\Http\Controllers\OurteamviewController;
 use App\Http\Controllers\AboutStoreController;
 use App\Http\Controllers\AboutviewController;
 use App\Http\Controllers\AbouteditController;
-use App\Http\Controllers\ItemController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\ServiceController;
+
+
 
 
 
@@ -30,7 +33,7 @@ use App\Http\Controllers\ItemController;
 //     return view('about');
 // });
 // });
-// Route::view('/admin', 'dashboard/admin')->name('admin');
+ 
 Auth::routes();
 Route::get('/', [IndexController::class,'index'])->name('index');
 
@@ -59,6 +62,7 @@ Route::get('/admin/aboutview', [App\Http\Controllers\aboutviewController::class,
 Route::post('/admin/about/store', [App\Http\Controllers\HomeController::class, 'AboutStore'])->name('AboutStore');
 Route::post('/admin/ourteam/store', [App\Http\Controllers\HomeController::class, 'ourteamStore'])->name('ourteam-Store');
 
+
 // edit data from interface to table (abouts)
 
 Route::get('/admin/abouts/edit/{id}', [App\Http\Controllers\HomeController::class, 'adminEditAbout'])->name('adminEditAbout');
@@ -83,3 +87,34 @@ Route::post('/admin/ourteams/destroy/{id}', [App\Http\Controllers\HomeController
 
 //----------------------------------------------------------------------------------
 
+//service page 
+
+//service route for user
+
+Route::get('/service', [ServiceController::class,'showAllservices'])->name('service');
+
+//service route for admin 
+Route::get('/admin/serviceadmin', [App\Http\Controllers\HomeController::class, 'showserviceAdmins'])->name('service-Admin');
+Route::get('/admin/serviceview', [App\Http\Controllers\HomeController::class, 'showAllServiceview'])->name('serviceview-Admin');
+
+//service store
+Route::post('/admin/service/store', [App\Http\Controllers\HomeController::class, 'serviceStore'])->name('serviceStore');
+
+
+//service edit
+
+// edit data from interface to table (services)
+
+Route::get('/admin/services/edit/{id}', [App\Http\Controllers\HomeController::class, 'adminEditservice'])->name('adminEditService');
+Route::post('/admin/services/update/{id}', [App\Http\Controllers\HomeController::class, 'adminserviceUpdate'])->name('adminServiceUpdate');
+
+
+//delete data from interface to table(services)
+
+Route::get('/admin/services/delete/{id}', [App\Http\Controllers\HomeController::class, 'adminDeleteService'])->name('adminDeleteService');
+Route::post('/admin/services/destroy/{id}', [App\Http\Controllers\HomeController::class, 'adminServiceDestroy'])->name('adminServiceDestroy');
+
+
+
+
+// Route::post('/admin/book/store', [App\Http\Controllers\HomeController::class, 'bookStore'])->name('bookStore');

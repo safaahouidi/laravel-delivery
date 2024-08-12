@@ -58,17 +58,37 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                    aria-expanded="true" aria-controls="collapsePages">
+                <a class="nav-link collapsed" href="multiCollapseabout" data-toggle="collapse"
+                    data-target="#multiCollapseabout" aria-expanded="true" aria-controls="multiCollapseabout">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>About Page</span>
                 </a>
-                <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div id="multiCollapseabout" class="collapse multi-collapse" aria-labelledby="headingPages"
+                    data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">About page:</h6>
                         <a class="collapse-item" href="{{route('about-Admin')}}">About</a>
                         <a class="collapse-item" href="{{route('ourteam-Admin')}}">Our team</a>
                         <a class="collapse-item" href="{{route('aboutview-Admin')}}">Show database About</a>
+                        <a class="collapse-item" href="{{route('ourteamview-Admin')}}">Show database Ourteam</a>
+
+
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="multiCollapseservice" data-toggle="collapse"
+                    data-target="#multiCollapseservice" aria-expanded="true" aria-controls="multiCollapseservice">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Service Page</span>
+                </a>
+                <div id="multiCollapseservice" class="collapse multi-collapse" aria-labelledby="headingPages"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Service page:</h6>
+                        <a class="collapse-item" href="{{route('service-Admin')}}">Our services</a>
+                        <a class="collapse-item" href="{{route('serviceview-Admin')}}">Show database our services</a>
                         <a class="collapse-item" href="{{route('ourteamview-Admin')}}">Show database Ourteam</a>
 
 
