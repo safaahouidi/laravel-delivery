@@ -89,11 +89,28 @@
                         <h6 class="collapse-header">Service page:</h6>
                         <a class="collapse-item" href="{{route('service-Admin')}}">Our services</a>
                         <a class="collapse-item" href="{{route('serviceview-Admin')}}">Show database our services</a>
-                        <a class="collapse-item" href="{{route('ourteamview-Admin')}}">Show database Ourteam</a>
-
 
                         <div class="collapse-divider"></div>
                     </div>
+
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="multiCollapsecontact" data-toggle="collapse"
+                    data-target="#multiCollapsecontact" aria-expanded="true" aria-controls="multiCollapsecontact">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>contact Page</span>
+                </a>
+                <div id="multiCollapsecontact" class="collapse multi-collapse" aria-labelledby="headingPages"
+                    data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">contact page:</h6>
+                        {{-- <a class="collapse-item" href="{{route('contact-Admin')}}">Our contacts</a> --}}
+                        <a class="collapse-item" href="{{route('contactview-Admin')}}">Show database our contacts</a>
+
+                        <div class="collapse-divider"></div>
+                    </div>
+
                 </div>
             </li>
             <li class="nav-item">

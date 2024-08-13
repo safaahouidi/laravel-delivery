@@ -10,6 +10,7 @@ use App\Models\ourteam;
 use App\Models\aboutview;
 use App\Models\ourteamview;
 use App\Models\service;
+use App\Models\contact;
 
 
 
@@ -57,7 +58,10 @@ class HomeController extends Controller
         return view('dashboard/about-page/ourteam',compact('ourteams'));
     }
 
-
+    // public function showcontactAdmins(){
+    //     $abouts=about:: all();
+    //     return view('dashboard/contact-page/contact-admin',compact('contacts'));
+    // }
     //-------------------------------------------------------
 
     // dashboard  about store 
@@ -234,6 +238,30 @@ $about=about::find($id);
 }
 
 
+
+//contact page
+
+    public function contactStore(Request $request){
+        // dd($request);
+        // return;
+        $contact=new contact();
+        $contact->name=$request->name;
+        $contact->email=$request->email;
+        $contact->subject=$request->subject;
+        $contact->message=$request->message;
+        // $imageUrl=$request->file('image')->store('contacts','public');
+        // $contact->image=$imageUrl;
+        $contact->save();
+        return redirect()->route('contact')->with('message',"contact Created Successfully");
+             }
+
+    public function showAllcontactview(){
+        $contacts = contact::all();
+        return view('dashboard/contact-page/contact-view',compact('contacts'));
+
+    }
+    }
+
 //   public function bookStore(Request $request){
 //                 // dd($request);
 //                 // return;
@@ -247,5 +275,3 @@ $about=about::find($id);
 //                      }
 
 
-
-}

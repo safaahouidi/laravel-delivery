@@ -56,10 +56,7 @@
                     <li><a href="{{route('index')}}" class="active">Home<br></a></li>
                     <li><a href="{{route('about')}}">About</a></li>
                     <li><a href="{{route('service')}}">Services</a></li>
-                    <li><a href="">Pricing</a></li>
-                    <li><a href="">book</a></li>
-
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="{{route('contact')}}">Contact</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

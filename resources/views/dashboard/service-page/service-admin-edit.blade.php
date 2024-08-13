@@ -62,7 +62,7 @@
                     <input type="submit" value="Update" class="btn btn-success mt-3">
                 </div>
             </form>
-            <a href="{{route('ourteamview-Admin')}}"><button class="btn btn-primary mt-3">back to service
+            <a href="{{route('serviceview-Admin')}}"><button class="btn btn-primary mt-3">back to service
                     view</button></a>
 
         </div>

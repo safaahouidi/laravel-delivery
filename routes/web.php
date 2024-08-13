@@ -12,6 +12,8 @@ use App\Http\Controllers\AboutviewController;
 use App\Http\Controllers\AbouteditController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ContactController;
+
 
 
 
@@ -26,9 +28,9 @@ use App\Http\Controllers\ServiceController;
 // Route::get('/', function () {
 //     return view('index');
 // });
-// Route::get('/', function () {
-//     return view('index');
-// });
+Route::get('/contact', function () {
+    return view('contact');
+});
 // Route::get('/about.html', function () {
 //     return view('about');
 // });
@@ -41,6 +43,7 @@ Route::get('/', [IndexController::class,'index'])->name('index');
 
 // About route for user
 Route::get('/about', [AboutController::class,'showAllAbouts'])->name('about');
+Route::get('/contact', [contactController::class,'showAllcontacts'])->name('contact');
 
 // --------------------------------------------------------------------------------
 
@@ -114,6 +117,10 @@ Route::post('/admin/services/update/{id}', [App\Http\Controllers\HomeController:
 Route::get('/admin/services/delete/{id}', [App\Http\Controllers\HomeController::class, 'adminDeleteService'])->name('adminDeleteService');
 Route::post('/admin/services/destroy/{id}', [App\Http\Controllers\HomeController::class, 'adminServiceDestroy'])->name('adminServiceDestroy');
 
+//----------------------------------------------------------------------------------------
+//contact store
+Route::post('/contact/store', [App\Http\Controllers\HomeController::class, 'contactStore'])->name('contactStore');
+Route::get('/admin/contactview', [App\Http\Controllers\HomeController::class, 'showAllcontactview'])->name('contactview-Admin');
 
 
 
