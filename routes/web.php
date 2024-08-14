@@ -7,7 +7,6 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\OurteamController;
 use App\Http\Controllers\OurteamviewController;
-use App\Http\Controllers\AboutStoreController;
 use App\Http\Controllers\AboutviewController;
 use App\Http\Controllers\AbouteditController;
 use App\Http\Controllers\BookController;
@@ -118,10 +117,11 @@ Route::get('/admin/services/delete/{id}', [App\Http\Controllers\HomeController::
 Route::post('/admin/services/destroy/{id}', [App\Http\Controllers\HomeController::class, 'adminServiceDestroy'])->name('adminServiceDestroy');
 
 //----------------------------------------------------------------------------------------
-//contact store
+//contact page
 Route::post('/contact/store', [App\Http\Controllers\HomeController::class, 'contactStore'])->name('contactStore');
 Route::get('/admin/contactview', [App\Http\Controllers\HomeController::class, 'showAllcontactview'])->name('contactview-Admin');
+//-----------------------------------------------------------------------------------------
 
-
-
-// Route::post('/admin/book/store', [App\Http\Controllers\HomeController::class, 'bookStore'])->name('bookStore');
+//book store
+Route::get('/admin/book', [App\Http\Controllers\HomeController::class, 'showbookAdmins'])->name('book');
+Route::post('/admin/book/store', [App\Http\Controllers\HomeController::class, 'bookStore'])->name('bookStore');

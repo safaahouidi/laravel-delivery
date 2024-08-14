@@ -113,21 +113,10 @@
 
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('about-Admin')}}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>About</span></a>
-            </li>
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{route('ourteamadmin')}}">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Ourteam</span></a>
-            </li> --}}
 
             <!-- Divider -->
-            <hr class="sidebar-divider">
+            {{--
+            <hr class="sidebar-divider"> --}}
 
             <!-- Heading -->
             <!-- Nav Item - Charts -->

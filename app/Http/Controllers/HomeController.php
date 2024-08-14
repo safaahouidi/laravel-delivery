@@ -238,6 +238,7 @@ $about=about::find($id);
 }
 
 
+// --------------------------------------------------------------------------------
 
 //contact page
 
@@ -260,18 +261,10 @@ $about=about::find($id);
         return view('dashboard/contact-page/contact-view',compact('contacts'));
 
     }
+
+    // ---------------------------------------------------------------------------------------
+      
     }
 
-//   public function bookStore(Request $request){
-//                 // dd($request);
-//                 // return;
-//                 $book=new book();
-//                 $book->source=$request->source;
-//                 $book->destination=$request->destination;
-//                 $book->transport=$request->transport;
-//                 $book->visacard=$request->visacard;
-//                 $book->save();
-//                 return redirect()->route('book-Admin')->with('message'," book Created Successfully");
-//                      }
 
 
